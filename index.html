@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#161a2b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>Pocket Arcade</title>
 <style>
 :root{--bg:#161a2b;--panel:#20253c;--ink:#ecebf5;--mut:#9b9db8;--label:#12142a}
@@ -232,4 +236,5 @@ cv.addEventListener('contextmenu',e=>{e.preventDefault();if(G&&G.alt&&!G.over)G.
 $('#back').onclick=home;
 $('#snd').onclick=e=>{mute=!mute;e.target.textContent='Sound: '+(mute?'off':'on')};
 render();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
